@@ -1,3 +1,4 @@
+---
 name: CI
 
 on:
@@ -36,7 +37,7 @@ jobs:
   plugin_test:
     strategy:
       matrix:
-        os: [ubuntu-latest, macos-latest]
+        os: [ ubuntu-latest, macos-latest ]
 
     runs-on: ${{ matrix.os }}
 
@@ -44,6 +45,6 @@ jobs:
       - name: asdf_plugin_test
         env:
           GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        uses: asdf-vm/actions/plugin-test@v2.0.0
+        uses: asdf-vm/actions/plugin-test@v2.1.0
         with:
           command: linkerd version --client
